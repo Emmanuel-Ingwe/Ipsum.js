@@ -15,3 +15,19 @@ I just told you! You've killed me! Fry! Quit doing the right thing, you jerk! Mi
 const form = document.querySelector('.lorem-form');
 const amount = document.getElementById('amount');
 const result = document.querySelector('.lorem-text');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const value = parseInt(amount.value);
+  const random = Math.floor(Math.random() * text.lenght);
+
+  if (isNaN(value) || value < 0 || value > 9) {
+    result.innerHTML = `<p class="result">${text[random]}</p>`;
+  }
+  else {
+    let tempText = text.slice(0, value);
+    tempText = tempText.map(function (item) {
+      return `<p class="result">${text[random]}</p>`;
+    });
+  }
+});  
